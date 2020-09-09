@@ -8,13 +8,13 @@ import java.nio.file.Paths;
 public class TextReader {
     private static final String DEFAULT_PATH = "datares/textExample.txt";
 
-    public String readFileData(String filename){
+    public String readFileData(String filename) {
         Path path;
         String data;
 
         if (filename != null && Files.exists(Paths.get(filename))) {
             path = Paths.get(filename);
-        } else{
+        } else {
             path = Paths.get(DEFAULT_PATH);
         }
 

@@ -1,12 +1,11 @@
 package by.balashevich.taskeditor.entity;
 
 import java.util.List;
-import java.util.StringJoiner;
 
 public class TextComponent extends BaseComponent {
     private static final String EMPTY_DELIMITER = "";
     private static final String TABULATION_DELIMITER = "\n\t";
-    private static final String ELEMENT_DELIMITER = "\s";
+    private static final String ELEMENT_DELIMITER = " ";
 
     public TextComponent(ComponentType componentType) {
         this.componentType = componentType;
@@ -39,7 +38,7 @@ public class TextComponent extends BaseComponent {
         TextComponent component = (TextComponent) obj;
 
         return this.componentType == component.componentType
-                && this.childComponentList.equals(component.componentType);
+                && this.childComponentList.equals(component.childComponentList);
     }
 
     @Override
@@ -53,19 +52,20 @@ public class TextComponent extends BaseComponent {
     @Override
     public String toString() {
         String delimiter;
-        if(componentType == ComponentType.WHOLE_TEXT){
+        if (componentType == ComponentType.WHOLE_TEXT) {
             delimiter = TABULATION_DELIMITER;
-        } else if (componentType == ComponentType.LEXEME){
+        } else if (componentType == ComponentType.LEXEME) {
             delimiter = EMPTY_DELIMITER;
-        } else{
+        } else {
             delimiter = ELEMENT_DELIMITER;
         }
 
-        StringJoiner stringJoiner = new StringJoiner(delimiter);
+        StringBuilder stringBuilder = new StringBuilder(delimiter);
         for (BaseComponent component : childComponentList) {
-            stringJoiner.add(component.toString());
+            stringBuilder.append(delimiter);
+            stringBuilder.append(component.toString().trim());
         }
 
-        return stringJoiner.toString();
+        return stringBuilder.toString();
     }
 }
