@@ -5,9 +5,6 @@ import by.balashevich.taskeditor.entity.ComponentType;
 import by.balashevich.taskeditor.entity.TextComponent;
 import by.balashevich.taskeditor.interpreter.MathExpressionInterpreter;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.util.regex.Pattern;
 
 public class SentenceHandler extends BaseHandler {

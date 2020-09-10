@@ -18,8 +18,8 @@ public class TextHandler extends BaseHandler {
     }
 
     public BaseComponent parseComponent(String componentData) {
-        componentData = componentData.replaceFirst(PARAGRAPH_DELIMITER, EMPTY_SYMBOL);
         TextComponent textComponent = new TextComponent(ComponentType.WHOLE_TEXT);
+        componentData = componentData.replaceFirst(PARAGRAPH_DELIMITER, EMPTY_SYMBOL);
         String[] paragraphs = componentData.split(PARAGRAPH_DELIMITER);
 
         for (String paragraph : paragraphs) {

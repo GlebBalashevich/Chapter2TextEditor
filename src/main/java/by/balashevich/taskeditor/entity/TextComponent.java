@@ -5,7 +5,7 @@ import java.util.List;
 public class TextComponent extends BaseComponent {
     private static final String EMPTY_DELIMITER = "";
     private static final String TABULATION_DELIMITER = "\n\t";
-    private static final String ELEMENT_DELIMITER = " ";
+    private static final String ELEMENT_DELIMITER = "\s";
 
     public TextComponent(ComponentType componentType) {
         this.componentType = componentType;

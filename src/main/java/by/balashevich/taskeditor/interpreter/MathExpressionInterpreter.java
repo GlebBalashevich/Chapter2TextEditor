@@ -8,7 +8,6 @@ public class MathExpressionInterpreter {
     private static final String SCRIPT_INTERPRETER_ENGINE = "JavaScript";
 
     private MathExpressionInterpreter() {
-
     }
 
     public static String evaluateExpression(String expression) {

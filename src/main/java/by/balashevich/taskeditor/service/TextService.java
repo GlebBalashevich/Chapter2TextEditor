@@ -23,6 +23,7 @@ public class TextService {
             sortedParagraphList = new ArrayList<>();
             logger.log(Level.WARN, "incorrect component type for sorting by sentences number");
         }
+
         return sortedParagraphList;
     }
 
